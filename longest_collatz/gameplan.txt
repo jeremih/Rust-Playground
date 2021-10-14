@@ -1,0 +1,42 @@
+define map of num in collatz seq to steps away from end of seq
+populate this by using coll_arr and iterating in reverse thru it
+add len() - index as value, coll_arr[index] as key
+but before that- check current value against map each time
+
+
+max_collatz_map and collatz_map
+former stores the max collatz value up till n
+latter stores the collatz value at n
+
+we're going to generate collatz_map up until a variable
+named curr_max
+
+for every n in collatz_map, we're going to check if
+max_collatz_map[n - 1] < collaz_map[n]
+
+it's o(n) still because we only do one rep in generating
+max_collatz_map for every rep in collatz_map
+
+say program gives us t = 3, n = [5, 10, 20]
+
+we're gonna generate collatz_map from 1 to 5
+for every n in the collaz_map's keys (say, 3)
+we are going to first of all keep track of the max n we've ever had
+to find a collatz num for (size of collaz_map)
+
+n = input
+c = collatz num
+m = max
+n | c | m
+----------
+1 | 0 | 0
+2 | 1 | 1
+3 | 900 | 900
+4 | 2 | 900
+
+to make max_collatz_map more efficient:
+have array of all max collatz nums called max_collatz_arr
+have values of max_collatz_map be pointers to entries in max_collatz_arr
+probably not actually more efficient since pointer size on x64 is 64 bits and
+i'm using u32 for my integers anyways... would be better for hypothetical case
+where i'm going to really gigantic nums

@@ -1,0 +1,59 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Cargo test",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib"
+                ]
+            },
+            "program": "${cargo:program}",
+            "args": []
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'max_tri_path'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=max_tri_path",
+                    "--package=max_tri_path"
+                ],
+                "filter": {
+                    "name": "max_tri_path",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'max_tri_path'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=max_tri_path",
+                    "--package=max_tri_path"
+                ],
+                "filter": {
+                    "name": "max_tri_path",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

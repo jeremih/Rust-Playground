@@ -1,0 +1,4 @@
+iterate row by row, starting from the bottom
+for every pair of nums in sequence, find the greater one and add it to the num in the row above
+repeat until you're at the final row (of one num)
+that num is the answer
